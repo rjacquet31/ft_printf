@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 20:16:24 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/20 16:10:48 by rafael           ###   ########.fr       */
+/*   Created: 2024/11/20 15:54:53 by rafael            #+#    #+#             */
+/*   Updated: 2024/11/20 16:21:40 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#ifndef PRINTF_H
+# define PRINTF_H
 
-int	ft_printf(const char *str, ...)
-{
-	va_list	args;
-	int		i;
-	int		len;
+# include <unistd.h>
+# include <stdarg.h>
 
-	va_start(args, str);
-	i = 0;
-	len = 0;
-	while (str[i])
-	{
-		if (str[i] == '%' && str[i + 1])
-		{
-			len += ft_wichprint(str[i + 1], args);
-			i += 2;
-		}
-		else
-		{
-			ft_putchar(str[i]);
-			len++;
-			i++;
-		}
-	}
-	va_end(args);
-	return (len);
-}
+int		ft_printf(const char *str, ...);
+
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
+void	ft_putstr(const char *str);
+int		ft_strlen(const char *str);
+int	ft_wichprint(char c, va_list args);
+
+#endif
