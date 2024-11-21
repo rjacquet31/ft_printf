@@ -6,23 +6,25 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:57:24 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/20 16:13:16 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/20 16:50:01 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 	{
-		ft_putstr("-2147483648");
+		ft_putstrs("-2147483648");
 		return ;
 	}
 	if (n < 0)
 	{
-		ft_putchar('-');
+		ft_putchars('-');
 		n = -n;
 	}
 	if (n >= 10)
 		ft_putnbr(n / 10);
-	ft_putchar((n % 10) + '0');
+	ft_putchars((n % 10) + '0');
 }

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 15:59:33 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/20 16:30:18 by rafael           ###   ########.fr       */
+/*   Created: 2024/11/20 15:54:53 by rafael            #+#    #+#             */
+/*   Updated: 2024/11/21 15:28:47 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+#define FT_PRINTF_H
 
-int	ft_strlen(char *str)
-{
-	int	len;
+#include <unistd.h>
+#include <stdarg.h>
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+int		ft_printf(const char *str, ...);
+int		ft_putchars(int c);
+void	ft_putnbr(int n);
+int		ft_putstrs(char *str);
+int		ft_strlen(char *str);
+int		ft_print_integer(int i);
+int		ft_int_len(int n);
+
+#endif

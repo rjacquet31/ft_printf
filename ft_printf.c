@@ -6,11 +6,27 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:16:24 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/20 16:10:48 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/21 15:26:15 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "ft_printf.h"
+
+int	ft_wichprint(char c, va_list args)
+{
+	if (c == 's')
+		return (ft_putstrs(va_arg(args, char *)));
+	else if (c == 'd')
+		return (ft_print_integer(va_arg(args, int)));
+	else if (c == 'c')
+		return (ft_putchars(va_arg(args, int)));
+	else if (c == '%')
+	{
+		ft_putchars('%');
+		return (1);
+	}
+	return (0);
+}
 
 int	ft_printf(const char *str, ...)
 {
@@ -30,7 +46,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar(str[i]);
+			ft_putchars(str[i]);
 			len++;
 			i++;
 		}

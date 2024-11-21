@@ -6,11 +6,11 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:53:10 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/20 16:20:15 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/20 16:30:22 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "ft_printf.h"
 
 int	ft_print_string(va_list args)
 {

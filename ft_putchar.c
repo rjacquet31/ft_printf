@@ -6,9 +6,11 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:58:56 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/20 16:13:11 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/20 16:30:08 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 void	ft_putchar(char c)
 {

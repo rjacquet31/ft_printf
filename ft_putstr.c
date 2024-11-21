@@ -6,11 +6,13 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:58:22 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/20 16:13:21 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/20 16:30:15 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(const char *str)
+#include "ft_printf.h"
+
+void	ft_putstr(char *str)
 {
 	if (!str)
 	{
