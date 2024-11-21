@@ -9,7 +9,9 @@ FILES = ft_printf.c \
 		ft_strlen.c \
 		ft_print_integer.c \
 		ft_print_pointer.c \
-		ft_print_unsigned.c
+		ft_print_unsigned.c \
+		ft_print_hex_min.c \
+		ft_print_hex_maj.c
 
 OBJ = $(FILES:.c=.o)
 

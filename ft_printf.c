@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:16:24 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/21 16:22:35 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:39:38 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_wichprint(char c, va_list args)
 	else if (c == 'u')
 		return (ft_print_unsigned(va_arg(args, unsigned int)));
 	else if (c == 'x')
-		return (1);
+		return (ft_print_hex_min(va_arg(args, unsigned int)));
 	else if (c == 'X')
-		return (1);
+		return (ft_print_hex_maj(va_arg(args, unsigned int)));
 	else if (c == '%')
 	{
 		ft_putchars('%');
