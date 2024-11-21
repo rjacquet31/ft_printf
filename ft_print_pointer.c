@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 15:57:24 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/21 16:12:59 by rafael           ###   ########.fr       */
+/*   Created: 2024/11/21 15:45:55 by rafael            #+#    #+#             */
+/*   Updated: 2024/11/21 16:02:46 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n)
+static void	ft_put_hex(unsigned long n)
 {
-	if (n == -2147483648)
+	if (n >= 16)
+		ft_put_hex(n / 16);
+	write(1, &"0123456789abcdef"[n % 16], 1);
+}
+
+int	ft_print_pointer(void *ptr)
+{
+	unsigned long	addr;
+	int				len;
+
+	if (!ptr)
 	{
-		ft_putstrs("-2147483648");
-		return ;
+		write(1, "(null)", 6);
+		return (6);
 	}
-	if (n < 0)
+	addr = (unsigned long)ptr;
+	write(1, "0x", 2);
+	ft_put_hex(addr);
+	len = 2;
+	while (addr)
 	{
-		ft_putchars('-');
-		n = -n;
+		len++;
+		addr /= 16;
 	}
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	ft_putchars((n % 10) + '0');
+	return (len);
 }

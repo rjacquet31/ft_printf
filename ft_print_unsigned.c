@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 15:54:53 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/21 16:22:03 by rafael           ###   ########.fr       */
+/*   Created: 2024/11/21 16:13:51 by rafael            #+#    #+#             */
+/*   Updated: 2024/11/21 16:21:17 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+static void	ft_put_unsigned(unsigned int n)
+{
+	if (n >= 10)
+		ft_put_unsigned(n / 10);
+	ft_putchars((n % 10) + '0');
+}
 
-int		ft_printf(const char *str, ...);
-int		ft_putchars(int c);
-void	ft_putnbr(int n);
-int		ft_putstrs(char *str);
-int		ft_strlen(char *str);
-int		ft_print_integer(int i);
-int		ft_print_pointer(void *ptr);
-int		ft_print_unsigned(unsigned int n);
-int		ft_int_len(int n);
+int	ft_print_unsigned(unsigned int n)
+{
+	int	len;
 
-#endif
+	ft_put_unsigned(n);
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}

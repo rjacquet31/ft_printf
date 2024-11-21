@@ -7,7 +7,9 @@ FILES = ft_printf.c \
 		ft_putnbr.c \
 		ft_putstrs.c \
 		ft_strlen.c \
-		ft_print_integer.c
+		ft_print_integer.c \
+		ft_print_pointer.c \
+		ft_print_unsigned.c
 
 OBJ = $(FILES:.c=.o)
 

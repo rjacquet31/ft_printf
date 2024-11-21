@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:16:24 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/21 15:26:15 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:22:35 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ int	ft_wichprint(char c, va_list args)
 		return (ft_print_integer(va_arg(args, int)));
 	else if (c == 'c')
 		return (ft_putchars(va_arg(args, int)));
+	else if (c == 'p')
+		return (ft_print_pointer(va_arg(args, char *)));
+	else if (c == 'i')
+		return (ft_print_integer(va_arg(args, int)));
+	else if (c == 'u')
+		return (ft_print_unsigned(va_arg(args, unsigned int)));
+	else if (c == 'x')
+		return (1);
+	else if (c == 'X')
+		return (1);
 	else if (c == '%')
 	{
 		ft_putchars('%');
