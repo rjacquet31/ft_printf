@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:45:55 by rafael            #+#    #+#             */
-/*   Updated: 2024/11/21 16:02:46 by rafael           ###   ########.fr       */
+/*   Updated: 2024/11/21 21:38:54 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	ft_print_pointer(void *ptr)
 
 	if (!ptr)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		write(1, "(nil)", 5);
+		return (5);
 	}
 	addr = (unsigned long)ptr;
 	write(1, "0x", 2);
